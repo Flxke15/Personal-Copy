@@ -1,12 +1,20 @@
 <template>
     <v-container>
-        {{ request.searchBar }}
+        <!-- {{ request.searchBar }} -->
         <SearchBar v-model="request.searchBar"/>
-        {{  request.homeDetails }}
+        <!-- {{  request.homeDetails }} -->
         <HomeDetails v-model="request.homeDetails"/>
-        {{  request.pidDetails }}
+        <!-- {{  request.pidDetails }} -->
         <PidDetails v-model="request.pidDetails"/>
+        
         <!-- <ScrollTop/> -->
+
+        <v-footer app color="gray">
+            <v-spacer></v-spacer>
+            <v-btn class="mr-3" color="#3498DB" @click="pdfPreviewCopy"><v-icon icon="mdi-printer"></v-icon></v-btn>
+            <v-btn color="#E74C3C"><v-icon icon="mdi-exit-to-app"></v-icon></v-btn>
+        </v-footer>
+
     </v-container>
 </template>
 
@@ -15,6 +23,7 @@
     import HomeDetails from './HomeDetails.vue'
     import PidDetails from './PidDetails.vue'
     import SearchBar from './SearchBar.vue'
+    import {exportPersonality1} from '@/utils/requestHotel101'
     // import ScrollTop from '@/components/Widget/ScrollTop.vue'
 
     export default {
@@ -26,6 +35,7 @@
             SearchBar,
             // ScrollTop,
         },
+
         data(){
             return{
                 request: {
@@ -34,6 +44,13 @@
                     pidDetails: new constructor.PidDetails(),
                 }
             }
-        }
+        },
+
+        methods: {
+            pdfPreviewCopy(){
+                exportPersonality1(this.request);
+            }
+        },
+
     }
 </script>

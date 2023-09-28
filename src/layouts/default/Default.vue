@@ -10,14 +10,12 @@
     <AppView />
     <ScrollTop />
 
-    <AppFooter />
   </v-app>
 </template>
 
 <script>
 import AppBar from "./AppBar.vue";
 import AppView from "./View.vue";
-import AppFooter from "./Footer.vue";
 import ScrollTop from "@/components/Widget/ScrollTop.vue";
 
 import SidebarImg from '@/assets/images/gun.png'
@@ -28,7 +26,6 @@ export default {
   components: {
     AppBar,
     AppView,
-    AppFooter,
     ScrollTop,
   },
 
