@@ -18,7 +18,8 @@
                         variant="outlined"
                         v-mask="'#-####-#####-##-#'"
                         hide-details="auto"
-                        persistent-placeholder  
+                        persistent-placeholder
+                        clearable
                     />
             </v-col>
             <v-col cols="12" sm="2" lg="2">

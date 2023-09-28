@@ -48,6 +48,7 @@
 
         methods: {
             pdfPreviewCopy(){
+                console.log(this.request)
                 exportPersonality1(this.request);
             }
         },

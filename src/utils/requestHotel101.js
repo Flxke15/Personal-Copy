@@ -3,13 +3,16 @@ import pdfmakeStyle from "@/plugins/pdfmake-style";
 function exportPersonality1(obj) {
     console.log(obj)
     const info = {
-        
+        pid : obj.searchBar.pid
     }
 
     const docDefintion = {
         pageMargins: [90,50,90,0],
         content : [
-            
+            {
+                text: info.pid,
+                margin: [0,0,0,0]
+            },
             {
                 text: `แบบ ร.ร. ๑`,
                 bold: true,
