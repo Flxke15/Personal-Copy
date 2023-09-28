@@ -42,7 +42,7 @@ export default {
   },
 
   mounted() {
-    this.appTitle = "ทะเบียนปืน";
+    this.appTitle = "คัดรับรองสำเนารายการคนและบ้าน";
     this.items = [
       {
         title: 'จัดทำคำขอใบอนุญาต ม.น. 1',
@@ -53,6 +53,11 @@ export default {
         title: 'จัดการคำร้อง',
         icon: 'mdi-script-text',
         link: '/gun/personal/manage',
+      },
+      {
+        title: 'คัดสำเนา',
+        icon: 'mdi-script-text',
+        link: '/gun/personal/copy',
       },
     ]
   },

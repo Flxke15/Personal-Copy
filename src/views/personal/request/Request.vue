@@ -5,12 +5,14 @@
       <v-tab value="one">ข้อมูลผู้ยืนคำขอ</v-tab>
       <v-tab value="two">ข้อมูลที่อยู่</v-tab>
     </v-tabs>
+
     <v-window v-model="tab">
       <v-window-item value="one">
         {{ request.general }}
         <General v-model="request.general" />
       </v-window-item>
     </v-window>
+    
     </div>
   </v-container>
 </template>

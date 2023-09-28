@@ -18,6 +18,7 @@
       
       <div class="my-nav-header py-2">{{ appTitle }}</div>
       <v-list density="compact">
+        
         <v-list-item
           v-for="(item, idx) in items"
           :key="item.title"
@@ -32,6 +33,7 @@
             <h4 class="py-2">{{ item.title }}</h4>
           </v-list-item-title>
         </v-list-item>
+
         <div class="my-6 group-divider">
           <hr class="divider" />
         </div>
