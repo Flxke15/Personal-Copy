@@ -55,7 +55,7 @@
     </v-app-bar>
     <v-app-bar elevation="0">
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <h2>{{ subtitle }}</h2>
+      <h2 class="ml-5">{{ subtitle }}</h2>
     </v-app-bar>
   </nav>
 </template>
@@ -67,7 +67,7 @@ export default {
     active: 0,
     subtitle: '',
   }),
-
+  
   props: {
     appTitle: {
       type: String,

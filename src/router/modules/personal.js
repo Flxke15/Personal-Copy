@@ -7,18 +7,18 @@ export default [
     path: '/gun/personal/request',
     name: 'personalRequest',
     component: Request,
-    meta:{ titile: 'ทะเบียนปืน - คำขอปืนบุคคล'}
+    meta:{ title: 'ทะเบียนปืน - คำขอปืนบุคคล'}
   },
   {
     path: '/gun/personal/manage',
     name: 'personalManage',
     component: Manage,
-    meta:{ titile: 'ทะเบียนปืน - จัดการคำขอ'}
+    meta:{ title: 'ทะเบียนปืน - จัดการคำขอ'}
   },
   {
     path: '/gun/personal/copy',
     name: 'personalCopy',
     component: Copy,
-    meta:{ titile: 'คัดสำเนาคนและบ้าน'}
+    meta:{ title: 'คัดสำเนาคนและบ้าน'}
   },
 ]
