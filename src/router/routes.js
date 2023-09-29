@@ -1,16 +1,16 @@
-import gunPersonalComponents from './modules/personal'
+import PersonalComponents from './modules/personal'
 
 export default [
   {
     path: '/',
-    redirect: '/gun/personal/request',
+    redirect: '/personal/copy',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
-        path: '/gun/personal/request',
-        name: 'personalRequest',
+        path: '/personal/copy',
+        name: 'personalCopy',
         component: () => import('@/views/personal/PersonalView.vue'),
-        children: [...gunPersonalComponents]
+        children: [...PersonalComponents]
       },
     ],
   },

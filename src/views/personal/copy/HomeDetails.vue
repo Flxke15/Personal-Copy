@@ -1,15 +1,15 @@
 <template>
     <v-container>
+        <!-- {{ pidInfo }} -->
         <Section
             color="#D8B192"
             icon="mdi-clipboard-text"
             header="รายการทะเบียนบ้าน"
         ></Section>
-
         <v-row>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.name"
+                v-model="pidInfo.name"
                 label="ชื่อ"
                 placeholder="ชื่อ"
                 variant="outlined"
@@ -20,7 +20,7 @@
             </v-col>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.gender"
+                v-model="pidInfo.gender"
                 label="เพศ"
                 placeholder="เพศ"
                 variant="outlined"
@@ -34,7 +34,7 @@
         <v-row>
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.birthDay"
+                v-model="pidInfo.birthDay"
                 label="เกิดเมื่อ"
                 placeholder="เกิดเมื่อ"
                 variant="outlined"
@@ -45,7 +45,7 @@
             </v-col>
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.homeStatus"
+                v-model="pidInfo.homeStatus"
                 label="สถานภาพในบ้าน"
                 placeholder="สถานภาพในบ้าน"
                 variant="outlined"
@@ -56,7 +56,7 @@
             </v-col>
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.pidNationality"
+                v-model="pidInfo.pidNationality"
                 label="สัญชาติ"
                 placeholder="สัญชาติ"
                 variant="outlined"
@@ -70,7 +70,7 @@
         <v-row>
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.momBirthDay"
+                v-model="pidInfo.momName"
                 label="มารดาชื่อ"
                 placeholder="มารดาชื่อ"
                 variant="outlined"
@@ -81,7 +81,7 @@
             </v-col> 
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.momPid"
+                v-model="pidInfo.momPid"
                 label="เลขประจำตัวประชาชน"
                 placeholder="เลขประจำตัวประชาชน"
                 v-mask="'#-####-#####-##-#'"
@@ -93,7 +93,7 @@
             </v-col> 
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.momNationality"
+                v-model="pidInfo.momNationality"
                 label="สัญชาติ"
                 placeholder="สัญชาติ"
                 variant="outlined"
@@ -107,7 +107,7 @@
         <v-row>
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.dadBirthDay"
+                v-model="pidInfo.dadName"
                 label="บิดาชื่อ"
                 placeholder="สัญชาติ"
                 variant="outlined"
@@ -118,7 +118,7 @@
             </v-col> 
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.dadPid"
+                v-model="pidInfo.dadPid"
                 label="เลขประจำตัวประชาชน"
                 placeholder="เลขประจำตัวประชาชน"
                 v-mask="'#-####-#####-##-#'"
@@ -130,7 +130,7 @@
             </v-col> 
             <v-col cols="12" sm="4" lg="4">
                 <v-text-field
-                v-model="localValue.dadNationality"
+                v-model="pidInfo.dadNationality"
                 label="สัญชาติ"
                 placeholder="สัญชาติ"
                 variant="outlined"
@@ -144,7 +144,7 @@
         <v-row>
             <v-col cols="12" sm="12" lg="12">
                 <v-text-field
-                v-model="localValue.address"
+                v-model="pidInfo.address"
                 label="ที่อยู่"
                 placeholder="ที่อยู่"
                 variant="outlined"
@@ -158,7 +158,7 @@
         <v-row>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.nameVillage"
+                v-model="pidInfo.nameVillage"
                 label="ชื่อหมู่บ้าน"
                 placeholder="ชื่อหมู่บ้าน"
                 variant="outlined"
@@ -169,7 +169,7 @@
             </v-col>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.typeHome"
+                v-model="pidInfo.typeHome"
                 label="ประเภทบ้าน"
                 placeholder="ประเภทบ้าน"
                 variant="outlined"
@@ -183,7 +183,7 @@
         <v-row>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.numberHome"
+                v-model="pidInfo.numberHome"
                 label="เลขรหัสประจำบ้าน"
                 placeholder="เลขรหัสประจำบ้าน"
                 variant="outlined"
@@ -194,7 +194,7 @@
             </v-col>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.regisHome"
+                v-model="pidInfo.regisHome"
                 label="สำนักทะเบียน"
                 placeholder="สำนักทะเบียน"
                 variant="outlined"
@@ -208,7 +208,7 @@
         <v-row>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.regisHomeStatus"
+                v-model="pidInfo.regisHomeStatus"
                 label="สถานภาพทางทะเบียน"
                 placeholder="สถานภาพทางทะเบียน"
                 variant="outlined"
@@ -219,7 +219,7 @@
             </v-col>
             <v-col cols="12" sm="6" lg="6">
                 <v-text-field
-                v-model="localValue.dateMoveIn"
+                v-model="pidInfo.dateMoveIn"
                 label="วันที่ย้ายเข้า"
                 placeholder="วันที่ย้ายเข้า"
                 variant="outlined"
@@ -244,41 +244,14 @@
         },
 
         props: {
-            modelValue: {
-            type: Object,
-            default: () => {
-                return {
-                    name: "",
-                    gender: "",
-                    birthDay: "",
-                    homeStatus: "",
-                    pidNationality: "",
-                    momBirthDay: "",
-                    momPid: "",
-                    momNationality: "",
-                    dadBirthDay: "",
-                    dadPid: "",
-                    dadNationality: "",
-                    address: "",
-                    nameVillage: "",
-                    typeHome: "",
-                    numberHome: "",
-                    regisHome: "",
-                    regisHomeStatus: "",
-                    dateMoveIn: "",
-                };
-            },
-            },
+            pidInfo : Object,
+
             readonly: {
-            type: Boolean,
-            default: true,
+                type: Boolean,
+                default: true,
             },
         },
-        setup(props) {
-            const localValue = reactive(props.modelValue);
-            return {
-                localValue,
-            };
-        },
+        
+
     }
 </script>

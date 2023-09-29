@@ -1,57 +1,53 @@
 <template>
-    <v-container>
-        <!-- {{ request.searchBar }} -->
-        <SearchBar v-model="request.searchBar"/>
-        <!-- {{  request.homeDetails }} -->
-        <HomeDetails v-model="request.homeDetails"/>
-        <!-- {{  request.pidDetails }} -->
-        <PidDetails v-model="request.pidDetails"/>
-        
-        <!-- <ScrollTop/> -->
+  <v-container>
+    <!-- {{ request.searchBar }} -->
+    <SearchBar v-model="request" />
+    <!-- {{  request.homeDetails }} -->
+    <!-- <HomeDetails v-model="request.homeDetails" /> -->
+    <!-- {{  request.pidDetails }} -->
+    <!-- <PidDetails v-model="request.pidDetails" /> -->
 
-        <v-footer app color="gray">
-            <v-spacer></v-spacer>
-            <v-btn class="mr-3" color="#3498DB" @click="pdfPreviewCopy"><v-icon icon="mdi-printer"></v-icon></v-btn>
-            <v-btn color="#E74C3C"><v-icon icon="mdi-exit-to-app"></v-icon></v-btn>
-        </v-footer>
+    <!-- <ScrollTop/> -->
 
-    </v-container>
+    <v-footer app color="gray">
+      <v-spacer></v-spacer>
+        <v-btn prepend-icon="mdi-printer" color="blue-lighten-1" class="mr-3" @click="pdfPreviewCopy">Print</v-btn>
+        <v-btn prepend-icon="mdi-exit-to-app" color="red-lighten-1">Exit</v-btn>
+    </v-footer>
+  </v-container>
 </template>
 
 <script>
-    import constructor from '@/store/constructor'
-    import HomeDetails from './HomeDetails.vue'
-    import PidDetails from './PidDetails.vue'
-    import SearchBar from './SearchBar.vue'
-    import {exportPersonality1} from '@/utils/requestHotel101'
-    // import ScrollTop from '@/components/Widget/ScrollTop.vue'
+import constructor from "@/store/constructor";
+// import HomeDetails from "./HomeDetails.vue";
+// import PidDetails from "./PidDetails.vue";
+import SearchBar from "./SearchBar.vue";
 
-    export default {
-        name : "Personal-Copy",
+import { exportPersonality1 } from "@/utils/requestHotel101";
+// import ScrollTop from '@/components/Widget/ScrollTop.vue'
 
-        components: {
-            HomeDetails,
-            PidDetails,
-            SearchBar,
-            // ScrollTop,
-        },
+export default {
+  name: "Personal-Copy",
 
-        data(){
-            return{
-                request: {
-                    homeDetails: new constructor.HomeDetails(),
-                    searchBar: new constructor.SearchBar(),
-                    pidDetails: new constructor.PidDetails(),
-                }
-            }
-        },
+  components: {
+    SearchBar,
+  },
 
-        methods: {
-            pdfPreviewCopy(){
-                console.log(this.request)
-                exportPersonality1(this.request);
-            }
-        },
+  data: () => ({
+        request:{},
+        // peopleAddress:{},
+    }),
 
-    }
+  methods: {
+    pdfPreviewCopy() {
+      console.log(this.request);
+      //console.log(this.pidInfo);
+      exportPersonality1(this.request);
+    },
+  },
+
+  // props: {
+  //   pidInfo : Object
+  // }
+};
 </script>

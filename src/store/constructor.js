@@ -12,10 +12,10 @@ class HomeDetails {
     this.birthDay = ''
     this.homeStatus = ''
     this.pidNationality = ''
-    this.momBirthDay = ''
+    this.momName = ''
     this.momPid = ''
     this.momNationality = ''
-    this.dadBirthDay = ''
+    this.dadName = ''
     this.dadPid = ''
     this.dadNationality = ''
     this.address = ''
@@ -29,7 +29,7 @@ class HomeDetails {
 }
 
 class PidDetails {
-  constructor(){
+  constructor() {
     this.pidName = ''
     this.pidAddress = ''
     this.pidIssueDate = ''
@@ -39,8 +39,7 @@ class PidDetails {
 }
 
 class SearchBar {
-  constructor(){
-    this.select = ''
+  constructor() {
     this.pid = ''
   }
 }

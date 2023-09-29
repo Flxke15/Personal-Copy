@@ -1,79 +1,93 @@
 <template>
     <v-container>
+        
         <Section
             color="#D8B192"
             icon="mdi-clipboard-text"
             header="รายการบัตรประจำตัวประชาชน"
         ></Section>
 
-        <v-row>
+        <v-row >
             <v-col cols="12" sm="6" lg="6">
-                <v-text-field
-                    v-model="localValue.pidName"
-                    label="ชื่อในบัตร"
-                    placeholder="ชื่อในบัตร"
-                    variant="outlined"
-                    hide-details="auto"
-                    persistent-placeholder
-                    readonly
-                />
-            </v-col>
-        </v-row>
+                <v-row>
+                    <v-col>
+                        <v-text-field
+                            v-model="pidInfo.pidName"
+                            label="ชื่อในบัตร"
+                            placeholder="ชื่อในบัตร"
+                            variant="outlined"
+                            hide-details="auto"
+                            persistent-placeholder
+                            readonly
+                        />
+                    </v-col>
+                </v-row>
 
-        <v-row>
-            <v-col cols="12" sm="6" lg="6">
-                <v-text-field
-                    v-model="localValue.pidAddress"
-                    label="ที่อยู่ในบัตร"
-                    placeholder="ที่อยู่ในบัตร"
-                    variant="outlined"
-                    hide-details="auto"
-                    persistent-placeholder
-                    readonly
-                />
-            </v-col>
-        </v-row>
+                <v-row>
+                    <v-col >
+                        <v-text-field
+                            v-model="pidInfo.pidAddress"
+                            label="ที่อยู่ในบัตร"
+                            placeholder="ที่อยู่ในบัตร"
+                            variant="outlined"
+                            hide-details="auto"
+                            persistent-placeholder
+                            readonly
+                        />
+                    </v-col>
+                </v-row>
 
-        <v-row>
-            <v-col cols="12" sm="6" lg="3">
-                <v-text-field
-                    v-model="localValue.pidIssueDate"
-                    label="วันออกบัตร"
-                    placeholder="วันออกบัตร"
-                    variant="outlined"
-                    hide-details="auto"
-                    persistent-placeholder
-                    readonly
-                />
-            </v-col>
-        </v-row>
+                <v-row>
+                    <v-col>
+                        <v-text-field
+                            v-model="pidInfo.pidIssueDate"
+                            label="วันออกบัตร"
+                            placeholder="วันออกบัตร"
+                            variant="outlined"
+                            hide-details="auto"
+                            persistent-placeholder
+                            readonly
+                        />
+                    </v-col>
+                </v-row>
 
-        <v-row>
-            <v-col cols="12" sm="6" lg="3">
-                <v-text-field
-                    v-model="localValue.pidExpiryDate"
-                    label="วันบัตรหมดอายุ"
-                    placeholder="วันบัตรหมดอายุ"
-                    variant="outlined"
-                    hide-details="auto"
-                    persistent-placeholder
-                    readonly
-                />
+                <v-row>
+                    <v-col>
+                        <v-text-field
+                            v-model="pidInfo.pidExpiryDate"
+                            label="วันบัตรหมดอายุ"
+                            placeholder="วันบัตรหมดอายุ"
+                            variant="outlined"
+                            hide-details="auto"
+                            persistent-placeholder
+                            readonly
+                        />
+                    </v-col>
+                </v-row>
+            
+                <v-row>
+                    <v-col>
+                        <v-text-field
+                            v-model="pidInfo.pidMakeNo"
+                            label="เลขรหัสการทำบัตร"
+                            placeholder="เลขรหัสการทำบัตร"
+                            variant="outlined"
+                            hide-details="auto"
+                            persistent-placeholder
+                            readonly
+                        />
+                    </v-col> 
+                </v-row>
             </v-col>
-        </v-row>
-        
-        <v-row>
-            <v-col cols="12" sm="6" lg="6">
-                <v-text-field
-                    v-model="localValue.pidMakeNo"
-                    label="เลขรหัสการทำบัตร"
-                    placeholder="เลขรหัสการทำบัตร"
-                    variant="outlined"
-                    hide-details="auto"
-                    persistent-placeholder
-                    readonly
-                />
-            </v-col> 
+
+            <v-col cols="12" sm="6" lg="6" align="center" justify="center">
+                <v-img
+                    width="340"
+                    height="400"
+                    src="@/assets/images/user-img.jpg"
+                    contain
+                ></v-img>
+            </v-col>
         </v-row>
 
     </v-container>
@@ -91,28 +105,13 @@
         },
 
         props: {
-            modelValue: {
-            type: Object,
-            default: () => {
-                return {
-                    pidName: "",
-                    pidAddress: "",
-                    pidIssueDate: "",
-                    pidExpiryDate: "",
-                    pidMakeNo: "",
-                };
-            },
-            },
+            pidInfo: Object,
+            
             readonly: {
-            type: Boolean,
-            default: true,
+                type: Boolean,
+                default: true,
             },
         },
-        setup(props) {
-            const localValue = reactive(props.modelValue);
-            return {
-                localValue,
-            };
-        },
+        
     }
 </script>
