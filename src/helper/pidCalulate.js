@@ -1,14 +1,15 @@
 function pidCalculate(pid){
-    console.log(pid)
-    let newPid = pid.replaceAll("-","")
-    // console.log(newPid)
-    let sum = 0
-    let pidLength = 13
-    let lastPidDigit = newPid[12]
-    //console.log(newPid.length)
-    if (newPid.length != 13){
+    if ( pid.length != 17 || pid == undefined){
         return false
     }else{
+        console.log(pid)
+        console.log(pid.length)
+        let newPid = pid.replaceAll("-","")
+        console.log(`new pid : ${newPid}`)
+        let sum = 0
+        let pidLength = 13
+        let lastPidDigit = newPid[12]
+
         //console.log('lastDigit : ',lastPidDigit)
         for (let i=0 ; i < 12 ; i++){
             sum += newPid[i]*pidLength
@@ -34,7 +35,9 @@ function pidCalculate(pid){
             // console.log(false)
             return false
         }
-        }
+        
+    }
+    
     
 }
 

@@ -62,18 +62,19 @@
 
         props: {
             modelValue: {
-            type: Object,
-            default: () => {
-                return {
-                    // pid : "",
-                    // select : "",
-                    pidData : {}
-                };
+                type: Object,
+                default: () => {
+                    return {
+                        // pid : "",
+                        // select : "",
+                        pidData : {}
+                    };
+                },
             },
-            },
+
             readonly: {
-            type: Boolean,
-            default: true,
+                type: Boolean,
+                default: true,
             },
         },
         setup(props) {
@@ -95,7 +96,7 @@
                             this.localValue.pidData = item //Send to Copy.vue
                         }
                         else{
-                            console.log('dont have data')
+                            console.log('pid not match go next.')
                         }
                     })
 
@@ -109,6 +110,9 @@
 
             clearData(){
                 this.pidInfo = {};
+                this.localValue.pidData = {};
+                console.log(this.pidInfo)
+                console.log(this.localValue.pidData)
             }
         }
     }

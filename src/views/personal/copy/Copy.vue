@@ -41,8 +41,10 @@ export default {
   methods: {
     pdfPreviewCopy() {
       console.log(this.request);
-      //console.log(this.pidInfo);
       exportPersonality1(this.request);
+      
+      //console.log(this.pidInfo);
+
     },
   },
 
