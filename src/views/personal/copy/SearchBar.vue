@@ -10,6 +10,7 @@
                     label="กรุณาเลือก"
                     placeholder="--กรุณาเลือก--"
                     persistent-placeholder
+                    
                 ></v-autocomplete>
             </v-col>
             <v-col cols="12" sm="6" lg="3">
@@ -90,8 +91,8 @@
                     const newPid = this.localValue.pid.replaceAll("-","")
                     console.log(this.pidInfo)
                     pidData.map((item) => {
-                        console.log("item pid : ", item.pid)
-                        if (newPid == item.pid){
+                        console.log("item pid : ", item.pid.replaceAll("-",""))
+                        if (newPid == item.pid.replaceAll("-","")){
                             this.pidInfo = item //Send to Components
                             this.localValue.pidData = item //Send to Copy.vue
                         }

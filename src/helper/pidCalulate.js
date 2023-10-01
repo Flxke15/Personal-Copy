@@ -1,5 +1,6 @@
 function pidCalculate(pid){
     if ( pid.length != 17 || pid == undefined){
+        console.log(`no no no.`)
         return false
     }else{
         console.log(pid)

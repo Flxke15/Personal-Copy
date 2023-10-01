@@ -44,10 +44,11 @@ const thirdStyle = () => {
   return {
     font: 'THSarabun',
     fontSize: 16,
-    lineHeight: 1.1,
+    lineHeight: 1.8,
     columnGap: 20,
   }
 }
+
 
 const pdfPrintPreview = (content) => {
   const pdfDocGenerator = window.pdfMake.createPdf(content)

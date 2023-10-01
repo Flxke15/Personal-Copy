@@ -1,4 +1,5 @@
 import pdfmakeStyle from '@/plugins/pdfmake-style'
+import image from '@/assets/images/user-img.jpg'
 
 function exportPersonality1(obj) {
   console.log(obj)
@@ -27,12 +28,32 @@ function exportPersonality1(obj) {
         pidIssueDate: obj.pidData.pidIssueDate,
         pidExpiryDate: obj.pidData.pidExpiryDate,
         pidMakeNo: obj.pidData.pidMakeNo,
+        registerCenter : `ศูนยบริการประชาชน กรมการปกครอง กรุงเทพมหานคร`,
+        date: `27 กันยายน พ.ศ. 2566`,
+        employee: `นายทดสอบ ผู้ปฏิบัติงาน`,
+       
   }
 
   const docDefintion = {
     pageMargins: [30, 50, 40, 40],
+    background: function (currentPage, pageSize) {
+      return [
+          {
+              canvas: [
+                  { type: 'line', x1: 20, y1: 25, x2: 550, y2: 25, lineWidth: 1 }, //Up line 
+                  { type: 'line', x1: 20, y1: 25, x2: 20, y2: 650, lineWidth: 1 }, //Left line
+                  { type: 'line', x1: 20, y1: 650, x2: 550, y2: 650, lineWidth: 1 }, //Bottom line
+                  { type: 'line', x1: 550, y1: 25, x2: 550, y2: 650, lineWidth: 1 }, //Rigth line
+
+                  { type: 'line', x1: 20, y1: 650, x2: 20, y2: 800, lineWidth: 1 }, //Left Bottom line 
+                  { type: 'line', x1: 20, y1: 800, x2: 550, y2: 800, lineWidth: 1 }, //Bottom2 line
+                  { type: 'line', x1: 550, y1: 650, x2: 550, y2: 800, lineWidth: 1 } //Right Bottom
+              ]
+
+          }
+      ]
+    },
     content: [
-      
       {
         text: `แบบรับรองรายการบุคคลจากฐานข้อมูลการทะเบียนของสํานักทะเบียนกลาง`,
         bold: true,
@@ -48,9 +69,9 @@ function exportPersonality1(obj) {
       {
         columns: [
           {
-            width:120,
+            width:180,
             text: [
-              `ชื่อ${" ".replace(5)}`,
+              `ชื่อ${" ".repeat(5)}`,
               {
                 text: info.name,
                 bold:true
@@ -58,8 +79,9 @@ function exportPersonality1(obj) {
             ]
           },
           {
+            width:230,
             text: [
-              `เลขบัตรประจำตัวประชาชน${" ".replace(5)}`,
+              `เลขบัตรประจำตัวประชาชน${" ".repeat(5)}`,
               {
                 text: info.pid,
                 bold:true
@@ -67,12 +89,13 @@ function exportPersonality1(obj) {
             ]
           },
           {
-            width:40,
+            width:'*',
             text: [
-              `เพศ${" ".replace(5)}`,
+              `เพศ${" ".repeat(5)}`,
               {
                 text: info.gender,
-                bold:true
+                bold:true,
+                margin:[0,0,50,0]
               }
             ]
           },
@@ -81,8 +104,9 @@ function exportPersonality1(obj) {
       {
         columns:[
           {
+            width:150,
             text: [
-              `เกิดเมื่อ${" ".replace(5)}`,
+              `เกิดเมื่อ${" ".repeat(5)}`,
               {
                 text: info.birthDay,
                 bold:true
@@ -91,7 +115,7 @@ function exportPersonality1(obj) {
           },
           {
             text: [
-              `สภานภาพในบ้าน${" ".replace(5)}`,
+              `สภานภาพในบ้าน${" ".repeat(5)}`,
               {
                 text: info.homeStatus,
                 bold:true
@@ -100,7 +124,7 @@ function exportPersonality1(obj) {
           },
           {
             text: [
-              `สัญชาติ${" ".replace(5)}`,
+              `สัญชาติ${" ".repeat(5)}`,
               {
                 text: info.pidNationality,
                 bold:true
@@ -112,9 +136,9 @@ function exportPersonality1(obj) {
       {
         columns:[
           {
-            width:'*',
+            width:150,
             text: [
-              `มารดาชื่อ${" ".replace(5)}`,
+              `มารดาชื่อ${" ".repeat(5)}`,
               {
                 text: info.momName,
                 bold:true
@@ -122,9 +146,9 @@ function exportPersonality1(obj) {
             ]
           },
           {
-            width:250,
+            width:230,
             text: [
-              `เลขบัตรประจำตัวประชาชน${" ".replace(5)}`,
+              `เลขบัตรประจำตัวประชาชน${" ".repeat(5)}`,
               {
                 text: info.momPid,
                 bold:true
@@ -134,7 +158,7 @@ function exportPersonality1(obj) {
           {
             width:'*',
             text: [
-              `สัญชาติ${" ".replace(5)}`,
+              `สัญชาติ${" ".repeat(5)}`,
               {
                 text: info.momNationality,
                 bold:true
@@ -146,8 +170,9 @@ function exportPersonality1(obj) {
       {
         columns:[
           {
+            width:150,
             text: [
-              `บิดาชื่อ${" ".replace(5)}`,
+              `บิดาชื่อ${" ".repeat(5)}`,
               {
                 text: info.dadName,
                 bold:true
@@ -155,8 +180,9 @@ function exportPersonality1(obj) {
             ]
           },
           {
+            width:230,
             text: [
-              `เลขบัตรประจำตัวประชาชน${" ".replace(5)}`,
+              `เลขบัตรประจำตัวประชาชน${" ".repeat(5)}`,
               {
                 text: info.dadPid,
                 bold:true
@@ -164,8 +190,9 @@ function exportPersonality1(obj) {
             ]
           },
           {
+            width:'*',
             text: [
-              `สัญชาติ${" ".replace(5)}`,
+              `สัญชาติ${" ".repeat(5)}`,
               {
                 text: info.dadNationality,
                 bold:true
@@ -175,44 +202,202 @@ function exportPersonality1(obj) {
         ]
       },
       {
-        text: info.address,
+        text: [
+          `ที่อยู่${" ".repeat(5)}`,
+          {
+            text: info.address,
+            bold: true
+          }
+        ]
       },
       {
-        text: info.nameVillage,
+        columns: [
+          {
+            text: [
+              `ชื่อหมู่บ้าน${" ".repeat(5)}`,
+              {
+                text: info.nameVillage,
+                bold:true
+              }
+            ],
+          },
+          {
+            text: [
+              `ประเภทบ้าน${" ".repeat(5)}`,
+              {
+                text: info.typeHome,
+                bold:true
+              }
+            ],
+          },
+        ],
+        margin:[0,20,0,0]
       },
       {
-        text: info.typeHome,
+        columns: [
+          {
+            text: [
+              `เลขรหัสประจำบ้าน${" ".repeat(5)}`,
+              {
+                text: info.numberHome,
+                bold:true
+              }
+            ],
+          },
+          {
+            text: [
+              `สำนักทะเบียน${" ".repeat(5)}`,
+              {
+                text: info.regisHome,
+                bold:true
+              }
+            ],
+          },
+        ]
       },
       {
-        text: info.numberHome,
+        columns: [
+          {
+            text: [
+              `สถานภาพทางทะเบียน${" ".repeat(5)}`,
+              {
+                text: info.regisHomeStatus,
+                bold:true
+              }
+            ],
+          },
+          {
+            text: [
+              `วันที่ย้ายเข้า${" ".repeat(5)}`,
+              {
+                text: info.dateMoveIn,
+                bold:true
+              }
+            ],
+          },
+        ]
       },
       {
-        text: info.regisHome,
+        text: `ข. รายการบัตรประจำตัวประชาชน`,
+        bold: true,
+        fontSize:18,
       },
       {
-        text: info.regisHomeStatus,
+        text: [
+            `ชื่อในบัตร${" ".repeat(5)}`,
+            {
+              text: info.pidName,
+              bold: true
+            }
+        ]
       },
       {
-        text: info.dateMoveIn,
+        text: [
+            `ที่อยู่ในบัตร${" ".repeat(5)}`,
+            {
+              text: info.pidAddress,
+              bold: true
+            }
+        ]
       },
       {
-        text: info.pidName,
+        text: [
+            `วันออกบัตร${" ".repeat(5)}`,
+            {
+              text: info.pidIssueDate,
+              bold: true
+            }
+        ],
+        margin:[0,20,0,0]
       },
       {
-        text: info.pidAddress,
+        text: [
+            `วันบัตรหมดอายุ${" ".repeat(5)}`,
+            {
+              text: info.pidExpiryDate,
+              bold: true
+            }
+        ]
       },
       {
-        text: info.pidIssueDate,
+        text: [
+            `เลขรหัสการทำบัตร${" ".repeat(5)}`,
+            {
+              text: info.pidMakeNo,
+              bold: true
+            }
+        ]
       },
       {
-        text: info.pidExpiryDate,
+        text: [
+          `หน่วยงานคัดกรองรายการ${" ".repeat(5)}`,
+          {
+            text: info.registerCenter,
+            bold:true
+          }
+        ],
+        lineHeight:1.4,
+        margin:[0,30,0,0],
       },
       {
-        text: info.pidMakeNo,
+        columns: [
+          {
+            text: [
+              `คัดจากฐานข้อมูล เมื่อวันที่${" ".repeat(5)}`,
+              {
+                text: info.date,
+                bold: true,
+              }
+            ],
+            lineHeight:1.4,
+          },
+          {
+            text: `ตรวจสอบความถูกต้อง`,
+            alignment: 'right',
+            lineHeight:1.4,
+            margin:[0,0,40,0],
+          },
+        ],
+        
       },
+      {
+        text: `เพื่อการออกใบอนุญาตในภารกิจด้านความสงบเรียบร้อยของกรมการปกครอง`,
+        lineHeight:1.4,
+      },
+      {
+        columns: [
+          {
+            text: [
+              `ผู้พิมพ์รายการ${" ".repeat(5)}`,
+              {
+                text: info.employee,
+                bold: true,
+              }
+            ],
+            lineHeight:1.4,
+          },
+          {
+            text: `ลงชื่อ${'.'.repeat(50)}`,
+            alignment: 'right',
+            lineHeight:1.4,
+            margin:[0,0,20,0]
+          }
+        ]
+      },
+      {
+        text: `()`,
+        alignment: 'right',
+        lineHeight:1.4,
+        margin:[0,0,80,0]
+      },
+      
     ],
     defaultStyle: pdfmakeStyle.thirdStyle(),
   }
+
+  
+    
+  
 
 
   window.pdfMake.createPdf(docDefintion).open()
