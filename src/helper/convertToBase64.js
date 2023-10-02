@@ -11,4 +11,6 @@ function convertImageToBase64(imgUrl, callback) {
       callback && callback(dataUrl)
     }
     image.src = imgUrl;
-  }
+}
+
+export { convertImageToBase64 }

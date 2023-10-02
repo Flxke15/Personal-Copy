@@ -31,6 +31,8 @@ function exportPersonality(obj) {
             date: `27 กันยายน พ.ศ. 2566`,
             employee: `นายทดสอบ ผู้ปฏิบัติงาน`,
             pidImage : obj.pidData.pidImage
+            //pidImage : convertImageToBase64(obj.pidData.pidImage,pidImage)
+
     }
   
     const docDefintion = {

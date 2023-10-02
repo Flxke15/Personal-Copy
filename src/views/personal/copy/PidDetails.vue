@@ -102,6 +102,7 @@
 <script>
     import { reactive } from "vue";
     import Section from '@/components/Widget/Section.vue'
+    import { convertImageToBase64 } from '@/helper/convertToBase64'
 
     export default {
         name: 'Personal-Copy-PidDetails',
@@ -109,6 +110,7 @@
         components: {
             Section,
         },
+
 
         props: {
             pidInfo: Object,
@@ -119,6 +121,5 @@
             },
         },
 
-        
     }
 </script>

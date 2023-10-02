@@ -67,7 +67,6 @@
                 default: () => {
                     return {
                         pid : "",
-                        // select : "",
                         pidData : {}
                     };
                 },

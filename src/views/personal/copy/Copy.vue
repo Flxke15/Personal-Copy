@@ -18,7 +18,6 @@
         <v-btn 
           prepend-icon="mdi-exit-to-app" 
           color="red-lighten-1"
-          @click="pdfPreviewCopy1"
         >
           Exit
         </v-btn>
@@ -49,11 +48,11 @@ export default {
   }),
 
   methods: {
+    // pdfPreviewCopy() {
+    //     console.log(this.request);
+    //     exportPersonality1(this.request);
+    // },
     pdfPreviewCopy() {
-        console.log(this.request);
-        exportPersonality1(this.request);
-    },
-    pdfPreviewCopy1() {
         console.log(this.request);
         exportPersonality(this.request);
     },

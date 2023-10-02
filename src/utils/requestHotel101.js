@@ -1,5 +1,4 @@
 import pdfmakeStyle from '@/plugins/pdfmake-style'
-import image1 from '@/assets/images/user-img.jpg'
 
 function exportPersonality1(obj) {
   console.log(obj)
@@ -31,7 +30,7 @@ function exportPersonality1(obj) {
         registerCenter : `ศูนยบริการประชาชน กรมการปกครอง กรุงเทพมหานคร`,
         date: `27 กันยายน พ.ศ. 2566`,
         employee: `นายทดสอบ ผู้ปฏิบัติงาน`,
-       
+
   }
 
   const docDefintion = {
