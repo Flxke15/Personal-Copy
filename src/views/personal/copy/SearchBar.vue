@@ -16,7 +16,7 @@
                     <v-text-field
                         v-model="localValue.pid"
                         label="เลขประจำตัวประชาชน"
-                        placeholder="เลขประจำตัวประชาชน"
+                        placeholder="X-XXXX-XXXXX-XX-X"
                         variant="outlined"
                         v-mask="'#-####-#####-##-#'"
                         hide-details="auto"
@@ -95,7 +95,7 @@
                 }else{
                     if (pidCalculate(this.localValue.pid)){
                         const newPid = this.localValue.pid.replaceAll("-","")
-                        console.log(this.pidInfo)
+                        console.log(this.pidInfo) 
                         // pidData.map((item) => {
                         //     console.log("item pid : ", item.pid.replaceAll("-",""))
                         //     if (newPid == item.pid.replaceAll("-","")){
@@ -109,6 +109,7 @@
                         //         });
                         //     }
                         // })
+                        // ไม่ใช่ map เพราะถ้าเจอข้อมูลให้หยุด ไม่ต้องไปต่อ
                         for (let i=0 ; i < pidDataJson.length; i++){
                             if (newPid == pidDataJson[i].pid.replaceAll("-","")){
                                 this.pidInfo = pidDataJson[i] //Send to Components
@@ -136,7 +137,7 @@
 
             clearData(){
                 this.pidInfo = {};
-                this.localValue.pidData = {};
+                this.localValue.pidData = null;
                 console.log(this.pidInfo)
                 console.log(this.localValue.pidData)
             }

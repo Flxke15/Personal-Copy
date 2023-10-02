@@ -86,12 +86,7 @@
             </v-col>
 
             <v-col cols="12" sm="6" lg="6" align="center" justify="center">
-                <v-img
-                    width="340"
-                    height="400"
-                    :src="pidInfo.pidImage"
-                    contain
-                ></v-img>
+                <v-img :scr="pidInfo.pidImage"></v-img>
             </v-col>
         </v-row>
 
@@ -101,7 +96,7 @@
 <script>
     import { reactive } from "vue";
     import Section from '@/components/Widget/Section.vue'
-    
+
     export default {
         name: 'Personal-Copy-PidDetails',
 
@@ -117,6 +112,7 @@
                 default: true,
             },
         },
+
         
     }
 </script>
