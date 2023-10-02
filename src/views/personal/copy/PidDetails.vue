@@ -86,8 +86,14 @@
             </v-col>
 
             <v-col cols="12" sm="6" lg="6" align="center" justify="center">
-                <v-img :scr="pidInfo.pidImage"></v-img>
-            </v-col>
+                <!-- <img :src="pidInfo.pidImage"> -->
+                <v-img 
+                    :src="pidInfo.pidImage"
+                    width="250"
+                    height="370"
+                    cover
+                ></v-img>
+            </v-col> 
         </v-row>
 
     </v-container>
