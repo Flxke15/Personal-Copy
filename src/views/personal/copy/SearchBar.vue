@@ -40,7 +40,7 @@
 <script>
     import { reactive } from "vue";
     import {pidCalculate} from '../../../helper/pidCalulate.js'
-    import pidData from "@/store/mock/pidData.json";
+    import pidDataJson from "@/store/mock/pidData.json";
     import HomeDetails from "./HomeDetails.vue";
     import PidDetails from "./PidDetails.vue";
     import Swal from "sweetalert2";
@@ -94,22 +94,36 @@
                     });
                 }else{
                     if (pidCalculate(this.localValue.pid)){
-                    const newPid = this.localValue.pid.replaceAll("-","")
-                    console.log(this.pidInfo)
-                    pidData.map((item) => {
-                        console.log("item pid : ", item.pid.replaceAll("-",""))
-                        if (newPid == item.pid.replaceAll("-","")){
-                            this.pidInfo = item //Send to Components
-                            this.localValue.pidData = item //Send to Copy.vue
+                        const newPid = this.localValue.pid.replaceAll("-","")
+                        console.log(this.pidInfo)
+                        // pidData.map((item) => {
+                        //     console.log("item pid : ", item.pid.replaceAll("-",""))
+                        //     if (newPid == item.pid.replaceAll("-","")){
+                        //         this.pidInfo = item //Send to Components
+                        //         this.localValue.pidData = item //Send to Copy.vue
+                        //     }else{
+                        //         console.log('pid not match go next.')
+                        //         this.$swal({
+                        //             icon: 'info',
+                        //             title: 'ไม่มีข้อมูลในระบบ',
+                        //         });
+                        //     }
+                        // })
+                        for (let i=0 ; i < pidDataJson.length; i++){
+                            if (newPid == pidDataJson[i].pid.replaceAll("-","")){
+                                this.pidInfo = pidDataJson[i] //Send to Components
+                                this.localValue.pidData = pidDataJson[i] //Send to Copy.vue
+                                break;
+                            }else if (i == pidDataJson.length-1 && newPid != pidDataJson[i].pid.replaceAll("-","")){
+                                console.log('pid not match go next.')
+                                this.$swal({
+                                    icon: 'info',
+                                    title: 'ไม่มีข้อมูลในระบบ',
+                                });
+                            }else{
+                                continue;
+                            }
                         }
-                        else{
-                            console.log('pid not match go next.')
-                            this.$swal({
-                                icon: 'info',
-                                title: 'ไม่มีข้อมูลในระบบ',
-                            });
-                        }
-                    })
                     console.log(this.pidInfo)
                 }else{
                     this.$swal({
