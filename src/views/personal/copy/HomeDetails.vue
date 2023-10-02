@@ -7,7 +7,7 @@
             header="รายการทะเบียนบ้าน"
         ></Section>
         <v-row>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.name"
                 label="ชื่อ"
@@ -16,9 +16,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.name == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.gender"
                 label="เพศ"
@@ -27,12 +28,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.gender == undefined"
                 />
             </v-col>
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.birthDay"
                 label="เกิดเมื่อ"
@@ -41,9 +43,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.birthDay == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.homeStatus"
                 label="สถานภาพในบ้าน"
@@ -52,9 +55,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.homeStatus == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.pidNationality"
                 label="สัญชาติ"
@@ -63,12 +67,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.pidNationality == undefined"
                 />
             </v-col> 
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.momName"
                 label="มารดาชื่อ"
@@ -77,9 +82,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.momName == undefined"
                 />
             </v-col> 
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.momPid"
                 label="เลขประจำตัวประชาชน"
@@ -89,9 +95,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.momPid == undefined"
                 />
             </v-col> 
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.momNationality"
                 label="สัญชาติ"
@@ -100,12 +107,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.momNationality == undefined"
                 />
             </v-col> 
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.dadName"
                 label="บิดาชื่อ"
@@ -114,9 +122,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.dadName == undefined"
                 />
             </v-col> 
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.dadPid"
                 label="เลขประจำตัวประชาชน"
@@ -126,9 +135,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.dadPid == undefined"
                 />
             </v-col> 
-            <v-col cols="12" sm="4" lg="4">
+            <v-col cols="12" sm="4" lg="3">
                 <v-text-field
                 v-model="pidInfo.dadNationality"
                 label="สัญชาติ"
@@ -137,12 +147,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.dadNationality == undefined"
                 />
             </v-col> 
         </v-row>
 
-        <v-row>
-            <v-col cols="12" sm="12" lg="12">
+        <v-row span="2">
+            <v-col cols="12" sm="12" lg="9">
                 <v-text-field
                 v-model="pidInfo.address"
                 label="ที่อยู่"
@@ -151,12 +162,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.address == undefined"
                 />
             </v-col> 
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.nameVillage"
                 label="ชื่อหมู่บ้าน"
@@ -165,9 +177,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.nameVillage == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.typeHome"
                 label="ประเภทบ้าน"
@@ -176,12 +189,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.typeHome == undefined"
                 />
             </v-col> 
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.numberHome"
                 label="เลขรหัสประจำบ้าน"
@@ -190,9 +204,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.numberHome == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.regisHome"
                 label="สำนักทะเบียน"
@@ -201,12 +216,13 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.regisHome == undefined"
                 />
             </v-col> 
         </v-row>
 
         <v-row>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.regisHomeStatus"
                 label="สถานภาพทางทะเบียน"
@@ -215,9 +231,10 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.regisHomeStatus == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="6">
+            <v-col cols="12" sm="6" lg="3">
                 <v-text-field
                 v-model="pidInfo.dateMoveIn"
                 label="วันที่ย้ายเข้า"
@@ -226,6 +243,7 @@
                 hide-details="auto"
                 persistent-placeholder
                 readonly
+                :disabled="pidInfo.dateMoveIn == undefined"
                 />
             </v-col> 
         </v-row>
@@ -251,7 +269,14 @@
                 default: true,
             },
         },
-        
+
+        methods: {
+            checkPidInfo(){
+                if (this.pidInfo == undefined){
+                    return false
+                }
+            }
+        }
 
     }
 </script>

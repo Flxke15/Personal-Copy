@@ -19,6 +19,7 @@
                             hide-details="auto"
                             persistent-placeholder
                             readonly
+                            :disabled="pidInfo.pidName == undefined"
                         />
                     </v-col>
                 </v-row>
@@ -33,6 +34,7 @@
                             hide-details="auto"
                             persistent-placeholder
                             readonly
+                            :disabled="pidInfo.pidAddress == undefined"
                         />
                     </v-col>
                 </v-row>
@@ -47,6 +49,7 @@
                             hide-details="auto"
                             persistent-placeholder
                             readonly
+                            :disabled="pidInfo.pidIssueDate == undefined"
                         />
                     </v-col>
                 </v-row>
@@ -61,6 +64,7 @@
                             hide-details="auto"
                             persistent-placeholder
                             readonly
+                            :disabled="pidInfo.pidExpiryDate == undefined"
                         />
                     </v-col>
                 </v-row>
@@ -75,6 +79,7 @@
                             hide-details="auto"
                             persistent-placeholder
                             readonly
+                            :disabled="pidInfo.pidMakeNo == undefined"
                         />
                     </v-col> 
                 </v-row>
@@ -84,7 +89,7 @@
                 <v-img
                     width="340"
                     height="400"
-                    src="@/assets/images/user-img.jpg"
+                    :src="pidInfo.pidImage"
                     contain
                 ></v-img>
             </v-col>

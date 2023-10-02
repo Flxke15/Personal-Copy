@@ -1,5 +1,5 @@
 import pdfmakeStyle from '@/plugins/pdfmake-style'
-import image from '@/assets/images/user-img.jpg'
+import image1 from '@/assets/images/user-img.jpg'
 
 function exportPersonality1(obj) {
   console.log(obj)
@@ -390,9 +390,19 @@ function exportPersonality1(obj) {
         lineHeight:1.4,
         margin:[0,0,80,0]
       },
+      // {
+      //   image: 'image1'
+      // },
+      // {
+      //   image: '@/assets/images/user-img.jpg'
+      // },
       
     ],
     defaultStyle: pdfmakeStyle.thirdStyle(),
+
+    images : {
+      snow: 'https://picsum.photos/seed/picsum/200/300',
+    }
   }
 
   

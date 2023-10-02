@@ -1,18 +1,20 @@
 <template>
   <v-container>
-    <!-- {{ request.searchBar }} -->
+    
     <SearchBar v-model="request" />
-    <!-- {{  request.homeDetails }} -->
-    <!-- <HomeDetails v-model="request.homeDetails" /> -->
-    <!-- {{  request.pidDetails }} -->
-    <!-- <PidDetails v-model="request.pidDetails" /> -->
-
-    <!-- <ScrollTop/> -->
-
+    
     <v-footer app color="gray">
       <v-spacer></v-spacer>
-        <v-btn prepend-icon="mdi-printer" color="blue-lighten-1" class="mr-3" @click="pdfPreviewCopy">Print</v-btn>
-        <v-btn prepend-icon="mdi-exit-to-app" color="red-lighten-1">Exit</v-btn>
+        <v-btn 
+          prepend-icon="mdi-printer" 
+          color="blue-lighten-1" 
+          class="mr-3" 
+          @click="pdfPreviewCopy" 
+        >Print</v-btn>
+        <v-btn 
+          prepend-icon="mdi-exit-to-app" 
+          color="red-lighten-1"
+        >Exit</v-btn>
     </v-footer>
   </v-container>
 </template>
@@ -36,20 +38,14 @@ export default {
   data: () => ({
         request:{},
         // peopleAddress:{},
-    }),
+  }),
 
   methods: {
     pdfPreviewCopy() {
-      console.log(this.request);
-      exportPersonality1(this.request);
-      
-      //console.log(this.pidInfo);
-
+        console.log(this.request);
+        exportPersonality1(this.request);
     },
   },
 
-  // props: {
-  //   pidInfo : Object
-  // }
 };
 </script>

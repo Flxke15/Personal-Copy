@@ -1,8 +1,5 @@
 function pidCalculate(pid){
-    if ( pid.length != 17 || pid == undefined){
-        console.log(`no no no.`)
-        return false
-    }else{
+        
         console.log(pid)
         console.log(pid.length)
         let newPid = pid.replaceAll("-","")
@@ -37,9 +34,6 @@ function pidCalculate(pid){
             return false
         }
         
-    }
-    
-    
 }
 
 export  { pidCalculate }

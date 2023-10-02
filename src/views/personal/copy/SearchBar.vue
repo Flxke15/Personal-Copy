@@ -10,7 +10,6 @@
                     label="กรุณาเลือก"
                     placeholder="--กรุณาเลือก--"
                     persistent-placeholder
-                    
                 ></v-autocomplete>
             </v-col>
             <v-col cols="12" sm="6" lg="3">
@@ -34,7 +33,7 @@
         <HomeDetails :pidInfo="pidInfo"/>
 
         <PidDetails :pidInfo="pidInfo"/>
-
+        
     </v-container>
 </template>
 
@@ -44,6 +43,7 @@
     import pidData from "@/store/mock/pidData.json";
     import HomeDetails from "./HomeDetails.vue";
     import PidDetails from "./PidDetails.vue";
+    import Swal from "sweetalert2";
 
     export default {
         name: 'Personal-Copy-SearchBar',
@@ -66,7 +66,7 @@
                 type: Object,
                 default: () => {
                     return {
-                        // pid : "",
+                        pid : "",
                         // select : "",
                         pidData : {}
                     };
@@ -87,7 +87,13 @@
 
         methods: {
             checkPid(){
-                if (pidCalculate(this.localValue.pid)){
+                if (this.localValue.pid == undefined || this.localValue.pid.length != 17){
+                    this.$swal({
+                        icon: 'warning',
+                        title: 'กรุณากรอกเลขประจำตัวประชาชนให้ครบ',
+                    });
+                }else{
+                    if (pidCalculate(this.localValue.pid)){
                     const newPid = this.localValue.pid.replaceAll("-","")
                     console.log(this.pidInfo)
                     pidData.map((item) => {
@@ -98,14 +104,19 @@
                         }
                         else{
                             console.log('pid not match go next.')
+                            this.$swal({
+                                icon: 'info',
+                                title: 'ไม่มีข้อมูลในระบบ',
+                            });
                         }
                     })
-
                     console.log(this.pidInfo)
-
-                }else{//
-                    console.log(false)
-                    //sweetAlert2
+                }else{
+                    this.$swal({
+                        icon: 'error',
+                        title: 'ใส่เลขบัตรประชาชนให้ถูกต้อง',
+                    });
+                }
                 }
             },
 
