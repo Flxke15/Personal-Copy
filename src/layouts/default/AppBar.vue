@@ -48,7 +48,6 @@
     <v-app-bar density="compact" elevation="1" v-if="$vuetify.display.mdAndUp">
       <v-layout class="align-center">
         <v-avatar image="@/assets/images/user-img.jpg" class="mx-2" size="40" />
-
         <v-list-item v-if="$vuetify.display.mdAndUp" class="mr-1" title="นายทดสอบ สกุลทดสอบ" subtitle="พนักงานทั่วไป">
         </v-list-item>
       </v-layout>

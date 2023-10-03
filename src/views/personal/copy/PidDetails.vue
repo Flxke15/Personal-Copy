@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <!-- <v-container> -->
         
         <Section
             color="#D8B192"
@@ -26,7 +26,8 @@
 
                 <v-row>
                     <v-col >
-                        <v-text-field
+                        <v-textarea
+                            rows="2"
                             v-model="pidInfo.pidAddress"
                             label="ที่อยู่ในบัตร"
                             placeholder="ที่อยู่ในบัตร"
@@ -96,7 +97,7 @@
             </v-col> 
         </v-row>
 
-    </v-container>
+    <!-- </v-container> -->
 </template>
 
 <script>

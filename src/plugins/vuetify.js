@@ -10,6 +10,8 @@ import 'vuetify/styles'
 
 // Composables
 import { createVuetify } from 'vuetify'
+// import VueSweetalert2 from 'vue-sweetalert2'
+// import { VuetifyDateAdapter } from 'vuetify/labs/date/adapters/vuetify'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
@@ -23,4 +25,9 @@ export default createVuetify({
       },
     },
   },
+
+  // components:{
+  //   VueSweetalert2,
+  // }
+
 })

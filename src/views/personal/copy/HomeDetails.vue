@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <!-- <v-container> -->
         <!-- {{ pidInfo }} -->
         <Section
             color="#D8B192"
@@ -7,7 +7,7 @@
             header="รายการทะเบียนบ้าน"
         ></Section>
         <v-row>
-            <v-col cols="12" sm="6" lg="3">
+            <v-col cols="12" sm="6" lg="4">
                 <v-text-field
                 v-model="pidInfo.name"
                 label="ชื่อ"
@@ -19,7 +19,7 @@
                 :disabled="pidInfo.name == undefined"
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="3">
+            <v-col cols="12" sm="6" lg="2">
                 <v-text-field
                 v-model="pidInfo.gender"
                 label="เพศ"
@@ -117,7 +117,7 @@
                 <v-text-field
                 v-model="pidInfo.dadName"
                 label="บิดาชื่อ"
-                placeholder="สัญชาติ"
+                placeholder="บิดาชื่อ"
                 variant="outlined"
                 hide-details="auto"
                 persistent-placeholder
@@ -154,7 +154,8 @@
 
         <v-row span="2">
             <v-col cols="12" sm="12" lg="9">
-                <v-text-field
+                <v-textarea
+                rows="2"
                 v-model="pidInfo.address"
                 label="ที่อยู่"
                 placeholder="ที่อยู่"
@@ -247,7 +248,7 @@
                 />
             </v-col> 
         </v-row>
-    </v-container>
+    <!-- </v-container> -->
 </template>
 
 <script>

@@ -31,7 +31,6 @@
         </v-row>
 
         <HomeDetails :pidInfo="pidInfo"/>
-
         <PidDetails :pidInfo="pidInfo"/>
         
     </v-container>
@@ -39,11 +38,11 @@
 
 <script>
     import { reactive } from "vue";
-    import {pidCalculate} from '../../../helper/pidCalulate.js'
+    import { pidCalculate } from '../../../helper/pidCalulate.js'
     import pidDataJson from "@/store/mock/pidData.json";
     import HomeDetails from "./HomeDetails.vue";
     import PidDetails from "./PidDetails.vue";
-    import Swal from "sweetalert2";
+    // import Swal from "sweetalert2";
 
     export default {
         name: 'Personal-Copy-SearchBar',
@@ -77,6 +76,7 @@
                 default: true,
             },
         },
+
         setup(props) {
             const localValue = reactive(props.modelValue);
             return {
@@ -89,26 +89,12 @@
                 if (this.localValue.pid == undefined || this.localValue.pid.length != 17){
                     this.$swal({
                         icon: 'warning',
-                        title: 'กรุณากรอกเลขประจำตัวประชาชนให้ครบ',
+                        title: 'กรุณากรอกเลขประจำตัวประชาชนให้ครบ 13 หลัก',
                     });
                 }else{
                     if (pidCalculate(this.localValue.pid)){
                         const newPid = this.localValue.pid.replaceAll("-","")
                         console.log(this.pidInfo) 
-                        // pidData.map((item) => {
-                        //     console.log("item pid : ", item.pid.replaceAll("-",""))
-                        //     if (newPid == item.pid.replaceAll("-","")){
-                        //         this.pidInfo = item //Send to Components
-                        //         this.localValue.pidData = item //Send to Copy.vue
-                        //     }else{
-                        //         console.log('pid not match go next.')
-                        //         this.$swal({
-                        //             icon: 'info',
-                        //             title: 'ไม่มีข้อมูลในระบบ',
-                        //         });
-                        //     }
-                        // })
-                        // ไม่ใช่ map เพราะถ้าเจอข้อมูลให้หยุด ไม่ต้องไปต่อ
                         for (let i=0 ; i < pidDataJson.length; i++){
                             if (newPid == pidDataJson[i].pid.replaceAll("-","")){
                                 this.pidInfo = pidDataJson[i] //Send to Components

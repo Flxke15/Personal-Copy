@@ -44,7 +44,7 @@ const thirdStyle = () => {
   return {
     font: 'THSarabun',
     fontSize: 16,
-    lineHeight: 1.7,
+    lineHeight: 1.6,
     columnGap: 20,
   }
 }

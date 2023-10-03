@@ -1,20 +1,6 @@
-import Request from '@/views/personal/request/Request.vue'
-import Manage from '@/views/personal/manage/Manage.vue'
 import Copy from '@/views/personal/copy/Copy.vue'
 
 export default [
-  // {
-  //   path: '/personal/request',
-  //   name: 'personalRequest',
-  //   component: Request,
-  //   meta:{ title: 'ทะเบียนปืน - คำขอปืนบุคคล'}
-  // },
-  // {
-  //   path: '/personal/manage',
-  //   name: 'personalManage',
-  //   component: Manage,
-  //   meta:{ title: 'ทะเบียนปืน - จัดการคำขอ'}
-  // },
   {
     path: '/personal/copy',
     name: 'personalCopy',
