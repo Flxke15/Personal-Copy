@@ -1,6 +1,6 @@
 <template>
-    <!-- <v-container> -->
-        <v-row>
+    <v-container>
+        <v-row class="d-flex">
             <v-col cols="12" sm="6" lg="3">
                 <v-autocomplete
                     v-model="select"
@@ -9,10 +9,11 @@
                     :items="items"
                     label="กรุณาเลือก"
                     placeholder="--กรุณาเลือก--"
+                    density="compact"
                     persistent-placeholder
                 />
             </v-col>
-            <v-col cols="12" sm="6" lg="3">
+            <v-col cols="12" sm="6" lg="3" >
                     <v-text-field
                         v-model="localValue.pid"
                         label="เลขประจำตัวประชาชน"
@@ -20,28 +21,48 @@
                         variant="outlined"
                         v-mask="'#-####-#####-##-#'"
                         hide-details="auto"
-                        append-inner-icon="mdi-magnify"
-                        @click:append-inner="checkPid"
                         persistent-placeholder
                         clearable
                         @click:clear="clearData"
+                        density="compact"
                         :disabled="select == 'อ่านบัตรประจำตัวประชาชน' || select == undefined"
                     />
+            </v-col>
+            <v-col>
+                <v-btn
+                    prepend-icon="mdi-magnify"
+                    variant="elevated"
+                    color="indigo"
+                    size="large"
+                    @click="checkPid"
+                >ค้นหา
+                </v-btn>
             </v-col>
         </v-row>
 
         <HomeDetails :pidInfo="pidInfo"/>
         <PidDetails :pidInfo="pidInfo"/>
-        
-    <!-- </v-container> -->
+
+        <v-footer app color="gray">
+            <v-spacer></v-spacer>
+            <v-btn 
+                prepend-icon="mdi-printer" 
+                color="blue-lighten-1" 
+                class="mr-3"
+                @click="pdfPreviewCopy" 
+            >
+            พิมพ์
+            </v-btn>
+        </v-footer>
+    </v-container>
 </template>
 
 <script>
     import { reactive } from "vue";
-    import { pidCalculate } from '../../../helper/pidCalulate.js'
+    import { pidCalculate } from '@/helper/pidCalulate.js'
     import pidDataJson from "@/store/mock/pidData.json";
-    import HomeDetails from "./HomeDetails.vue";
-    import PidDetails from "./PidDetails.vue";
+    import HomeDetails from "../copy101/HomeDetails.vue";
+    import PidDetails from "../copy101/PidDetails.vue";
 
     export default {
         name: 'Personal-Copy-SearchBar',
@@ -124,7 +145,13 @@
                 this.localValue.pidData = null;
                 console.log(this.pidInfo)
                 console.log(this.localValue.pidData)
-            }
+            },
+
+            pdfPreviewCopy() {
+                console.log(this.request);
+                exportPersonality(this.request);
+            },
+
         }
     }
 </script>

@@ -6,8 +6,9 @@
             icon="mdi-clipboard-text"
             header="รายการทะเบียนบ้าน"
         ></Section>
+
         <v-row>
-            <v-col cols="12" sm="6" lg="4">
+            <v-col cols="12" sm="6" lg="4" align-self="center">
                 <v-text-field
                 v-model="pidInfo.name"
                 label="ชื่อ"
@@ -18,6 +19,8 @@
                 readonly
                 :disabled="pidInfo.name == undefined"
                 />
+                <!-- <v-label>ชื่อ - สกุล :</v-label>
+                <v-label></v-label> -->
             </v-col>
             <v-col cols="12" sm="6" lg="2">
                 <v-text-field

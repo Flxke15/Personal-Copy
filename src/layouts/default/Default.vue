@@ -41,20 +41,15 @@ export default {
   mounted() {
     this.appTitle = "คัดรับรองสำเนารายการคนและบ้าน";
     this.items = [
-      // {
-      //   title: 'จัดทำคำขอใบอนุญาต ม.น. 1',
-      //   icon: 'mdi-certificate',
-      //   link: '/personal/request',
-      // },
-      // {
-      //   title: 'จัดการคำร้อง',
-      //   icon: 'mdi-script-text',
-      //   link: '/personal/manage',
-      // },
       {
         title: 'คัดสำเนา',
         icon: 'mdi-script-text',
         link: '/personal/copy',
+      },
+      {
+        title: 'คัดสำเนา101-label',
+        icon: 'mdi-script-text',
+        link: '/personal/copy101',
       },
     ]
   },

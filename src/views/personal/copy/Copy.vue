@@ -13,13 +13,6 @@
         >
           พิมพ์
         </v-btn>
-
-        <!-- <v-btn 
-          prepend-icon="mdi-exit-to-app" 
-          color="red-lighten-1"
-        >
-          Exit
-        </v-btn> -->
     </v-footer>
   </v-container>
 </template>

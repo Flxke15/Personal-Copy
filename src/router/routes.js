@@ -12,6 +12,7 @@ export default [
         component: () => import('@/views/personal/PersonalView.vue'),
         children: [...PersonalComponents]
       },
+      
     ],
   },
 ]
