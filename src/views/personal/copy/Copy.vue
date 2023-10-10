@@ -7,6 +7,7 @@
         <v-btn 
           prepend-icon="mdi-printer" 
           color="blue-lighten-1" 
+          rounded
           class="mr-3"
           :disabled="request.pidData == undefined "
           @click="pdfPreviewCopy" 

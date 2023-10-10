@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row class="d-flex">
+        <v-row class="d-flex" >
             <v-col cols="12" sm="6" lg="3">
                 <v-autocomplete
                     v-model="select"
@@ -34,6 +34,7 @@
                     variant="elevated"
                     color="indigo"
                     size="large"
+                    rounded
                     @click="checkPid"
                 >ค้นหา
                 </v-btn>
@@ -48,8 +49,11 @@
             <v-btn 
                 prepend-icon="mdi-printer" 
                 color="blue-lighten-1" 
+                size="large"
                 class="mr-3"
+                rounded
                 @click="pdfPreviewCopy" 
+                :disabled="pidInfo.pid == undefined"
             >
             พิมพ์
             </v-btn>

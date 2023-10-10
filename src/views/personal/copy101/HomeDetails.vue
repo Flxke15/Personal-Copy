@@ -7,79 +7,79 @@
 <v-container>
         <v-row>
             <v-col cols="12" sm="6" lg="8" align-self="center">
-                <label>ชื่อ - สกุล : {{ pidInfo.name }}</label>
+                <span class="text-grey">ชื่อ - สกุล :</span>  {{ pidInfo.name }}              
             </v-col>
             <v-col cols="12" sm="6" lg="2" align-self="center">
-                <label>เพศ : {{ pidInfo.gender }}</label>
+                <span class="text-grey">เพศ : </span> {{ pidInfo.gender }}
             </v-col>
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>เกิดเมื่อ : {{ pidInfo.birthDay }}</label>
+                <span class="text-grey">เกิดเมื่อ : </span> {{ pidInfo.birthDay }}
             </v-col>
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>สถานภาพในบ้าน : {{ pidInfo.homeStatus }}</label>
+                <span class="text-grey">สถานภาพในบ้าน : </span> {{ pidInfo.homeStatus }}
             </v-col>
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>สัญชาติ : {{ pidInfo.pidNationality }}</label>
+                <span class="text-grey">สัญชาติ : </span> {{ pidInfo.pidNationality }}
             </v-col> 
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>มารดาชื่อ : {{ pidInfo.momName }}</label>
+                <span class="text-grey">มารดาชื่อ : </span> {{ pidInfo.momName }}
             </v-col> 
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>เลขประจำตัวประชาชน : {{ pidInfo.momPid }}</label>
+                <span class="text-grey">เลขประจำตัวประชาชน : </span> {{ pidInfo.momPid }}
             </v-col> 
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>สัญชาติ : {{ pidInfo.momNationality }}</label>
+                <span class="text-grey">สัญชาติ : </span> {{ pidInfo.momNationality }}
             </v-col> 
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>บิดาชื่อ : {{ pidInfo.dadName }}</label>
+                <span class="text-grey">บิดาชื่อ : </span>  {{ pidInfo.dadName }}
             </v-col> 
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>เลขประจำตัวประชาชน : {{ pidInfo.dadPid }}</label>
+                <span class="text-grey">เลขประจำตัวประชาชน : </span> {{ pidInfo.dadPid }}
             </v-col> 
             <v-col cols="12" sm="4" lg="4" align-self="center">
-                <label>สัญชาติ : {{ pidInfo.dadNationality }}</label>
+                <span class="text-grey">สัญชาติ : </span> {{ pidInfo.dadNationality }}
             </v-col> 
         </v-row>
 
         <v-row span="2">
             <v-col cols="12" sm="12" lg="12" align-self="center">
-                <label>ที่อยู่ : {{ pidInfo.address }}</label>
+                <span class="text-grey">ที่อยู่ : </span> {{ pidInfo.address }}
             </v-col> 
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>ชื่อหมู่บ้าน : {{ pidInfo.nameVillage }}</label>
+                <span class="text-grey">ชื่อหมู่บ้าน : </span> {{ pidInfo.nameVillage }}
             </v-col>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>ประเภทบ้าน : {{ pidInfo.typeHome }}</label>
+                <span class="text-grey">ประเภทบ้าน : </span> {{ pidInfo.typeHome }}
             </v-col> 
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>เลขรหัสประจำบ้าน : {{ pidInfo.numberHome }}</label>
+                <span class="text-grey">เลขรหัสประจำบ้าน : </span>  {{ pidInfo.numberHome }}
             </v-col>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>สำนักทะเบียน : {{ pidInfo.regisHome }}</label>
+                <span class="text-grey">สำนักทะเบียน : </span> {{ pidInfo.regisHome }}
             </v-col> 
         </v-row>
 
         <v-row>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>สถานภาพทางทะเบียน : {{ pidInfo.regisHomeStatus }}</label>
+                <span class="text-grey">สถานภาพทางทะเบียน : </span> {{ pidInfo.regisHomeStatus }}
             </v-col>
             <v-col cols="12" sm="6" lg="4" align-self="center">
-                <label>วันที่ย้ายเข้า : {{ pidInfo.dateMoveIn }}</label>
+                <span class="text-grey">วันที่ย้ายเข้า : </span> {{ pidInfo.dateMoveIn }}
             </v-col> 
         </v-row>
     </v-container>

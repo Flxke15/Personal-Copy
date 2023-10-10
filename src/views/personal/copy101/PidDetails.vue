@@ -10,27 +10,27 @@
         <v-col cols="12" sm="6" lg="8">
             <v-row>
                 <v-col>
-                    <label>ชื่อในบัตร : {{ pidInfo.pidName }}</label>
+                    <span class="text-grey" >ชื่อในบัตร : </span> {{ pidInfo.pidName }}
                 </v-col>
             </v-row>
             <v-row>
                 <v-col >
-                    <label>ที่อยู่ในบัตร : {{ pidInfo.pidAddress }}</label>
+                    <span class="text-grey" >ที่อยู่ในบัตร : </span> {{ pidInfo.pidAddress }}
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <label>วันออกบัตร : {{ pidInfo.pidIssueDate }}</label>
+                    <span class="text-grey" >วันออกบัตร : </span> {{ pidInfo.pidIssueDate }}
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <label>วันบัตรหมดอายุ : {{ pidInfo.pidExpiryDate }}</label>
+                    <span class="text-grey" >วันบัตรหมดอายุ : </span> {{ pidInfo.pidExpiryDate }}
                 </v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <label>เลขรหัสการทำบัตร : {{ pidInfo.pidMakeNo }}</label>
+                    <span class="text-grey" >เลขรหัสการทำบัตร : </span> {{ pidInfo.pidMakeNo }}
                 </v-col> 
             </v-row>
         </v-col>
@@ -49,8 +49,8 @@
 
 <script>
     import { reactive } from "vue";
-    import Section from '@/components/Widget/Section.vue'
-
+    import Section from '@/components/widget/Section.vue'
+    
     export default {
         name: 'Personal-Copy-PidDetails',
 
