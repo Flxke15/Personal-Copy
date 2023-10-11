@@ -67,6 +67,7 @@
     import { reactive } from "vue";
     import { pidCalculate } from '@/helper/pidCalulate.js'
     import { exportPersonality } from '@/utils/requestCopy.js'
+    import { exportRequestCopy } from '@/utils/pdfRequestCopy.js'
     import pidDataJson from "@/store/mock/pidData.json";
     import HomeDetails from "../copy101/HomeDetails.vue";
     import PidDetails from "../copy101/PidDetails.vue";
@@ -156,7 +157,8 @@
 
             pdfPreviewCopy() {
                 console.log(this.localValue);
-                exportPersonality(this.localValue);
+                //exportPersonality(this.localValue);
+                exportRequestCopy(this.localValue)
             },
 
         }

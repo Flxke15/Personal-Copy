@@ -1,6 +1,6 @@
 import pdfmakeStyle from '@/plugins/pdfmake-style'
 
-function exportPersonality(obj) {
+function exportRequestCopy(obj) {
 	console.log(obj)
 	const info = {
 		pid: obj.pidData.pid,
@@ -42,7 +42,7 @@ function exportPersonality(obj) {
 			{
 				table: {
 					padding: [5, 0, 0, 0],
-
+					widths: ['*'],
 					body: [
 						[
 							{
@@ -84,7 +84,6 @@ function exportPersonality(obj) {
 						[
 							{
 								columns: [
-
 									{
 										width: '*',
 										text: [
@@ -102,7 +101,7 @@ function exportPersonality(obj) {
 											{
 												text: info.gender,
 												bold: true,
-												margin: [0, 0, 50, 0]
+												margin: [0, 0, 0, 0]
 											}
 										],
 									},
@@ -135,6 +134,7 @@ function exportPersonality(obj) {
 										],
 									},
 									{
+										width: '*',
 										text: [
 											`สัญชาติ${' '.repeat(2)}`,
 											{
@@ -241,6 +241,7 @@ function exportPersonality(obj) {
 							{
 								columns: [
 									{
+										width: '*',
 										text: [
 											`ชื่อหมู่บ้าน${' '.repeat(2)}`,
 											{
@@ -250,6 +251,7 @@ function exportPersonality(obj) {
 										],
 									},
 									{
+										width: '*',
 										text: [
 											`ประเภทบ้าน${' '.repeat(4)}`,
 											{
@@ -267,6 +269,7 @@ function exportPersonality(obj) {
 							{
 								columns: [
 									{
+										width: '*',
 										text: [
 											`เลขรหัสประจำบ้าน${' '.repeat(2)}`,
 											{
@@ -276,6 +279,7 @@ function exportPersonality(obj) {
 										],
 									},
 									{
+										width: '*',
 										text: [
 											`สำนักทะเบียน${' '.repeat(2)}`,
 											{
@@ -293,6 +297,7 @@ function exportPersonality(obj) {
 							{
 								columns: [
 									{
+										width: '*',
 										text: [
 											`สถานภาพทางทะเบียน${' '.repeat(2)}`,
 											{
@@ -302,6 +307,7 @@ function exportPersonality(obj) {
 										],
 									},
 									{
+										width: '*',
 										text: [
 											`วันที่ย้ายเข้า${' '.repeat(5)}`,
 											{
@@ -324,7 +330,6 @@ function exportPersonality(obj) {
 								border: [true, false, true, false],
 							},
 						],
-						//////////////////////////
 						[
 							{
 								columns: [
@@ -400,24 +405,17 @@ function exportPersonality(obj) {
 											margin: [5, 0, 0, 0]
 										},
 									],
-									// [
-									// 	// {
-									// 	// 	width:'*',
-									// 	// 	image: info.pidImage,
-									// 	// 	//fit: [250, 200],
-									// 	// 	alignment: 'center',
-									// 	// 	margin: [0, 0, 0, 5]
-									// 	// },
-									// 	{
-									// 		text: `image`
-									// 	}
-									// ],
+									{
+										width: 'auto',
+										image: info.pidImage,
+										fit: [200, 170],
+										margin: [0, 0, 50, 5]
+									}
 								],
 								lineHeight: 1.5,
 								border: [true, false, true, false],
 							}
 						],
-						//////////////////////////
 						[
 							{
 								text: [
@@ -436,7 +434,7 @@ function exportPersonality(obj) {
 							{
 								columns: [
 									{
-										width: 250,
+										width: 'auto',
 										text: [
 											`คัดจากฐานข้อมูล เมื่อวันที่${' '.repeat(2)}`,
 											{
@@ -447,11 +445,10 @@ function exportPersonality(obj) {
 										lineHeight: 1.1,
 									},
 									{
-										width: '*',
+										width: 'auto',
 										text: `ตรวจสอบความถูกต้อง`,
-										alignment: 'center',
 										lineHeight: 1.1,
-										margin: [0, 0, 0, 0],
+										margin: [150, 0, 0, 0],
 									},
 								],
 								margin: [5, 0, 0, 0],
@@ -470,7 +467,7 @@ function exportPersonality(obj) {
 							{
 								columns: [
 									{
-										width: 250,
+										width: 'auto',
 										text: [
 											`ผู้พิมพ์รายการ${' '.repeat(2)}`,
 											{
@@ -481,11 +478,10 @@ function exportPersonality(obj) {
 										lineHeight: 1.1,
 									},
 									{
-										width: '*',
+										width: 'auto',
 										text: `ลงชื่อ${'.'.repeat(50)}`,
-										alignment: 'center',
 										lineHeight: 1.1,
-										margin: [0, 0, 0, 0]
+										margin: [165, 0, 0, 0]
 									}
 								],
 								margin: [5, 0, 0, 0],
@@ -494,24 +490,14 @@ function exportPersonality(obj) {
 						],
 						[
 							{
-								columns: [
-									{
-										width: 250,
-										text: ``
-									},
-									{
-										text: `()`,
-										alignment: 'center',
-										lineHeight: 1.1,
-										margin: [0, 0, 0, 0]
-									}
-								],
-								margin: [5, 0, 0, 0],
+								text: `()`,
+								alignment: 'center',
+								lineHeight: 1.1,
+								margin: [350, 0, 0, 0],
 								border: [true, false, true, true],
 							}
 						],
-					],
-
+					]
 				}
 			}
 		],
@@ -521,4 +507,4 @@ function exportPersonality(obj) {
 	window.pdfMake.createPdf(docDefintion).open()
 }
 
-export { exportPersonality }
+export { exportRequestCopy }
